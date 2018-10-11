@@ -4,27 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.albaaqy.albaaqy.LoginActivity"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.albaaqy.albaaqy.LoginActivity">
+
 
     <EditText
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/email"
+        android:hint="Username"
         android:inputType="textEmailAddress"/>
-
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/password"
+        android:hint="Password"
         android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"/>
-
+        android:layout_gravity="right"
+        android:hint="Login"
+        android:onClick="Login"/>
 </LinearLayout>

@@ -8,34 +8,35 @@ import android.content.SharedPreferences;
  */
 
 public class PreferencesHelper {
-    private static PreferencesHelper INSTANCE;
+    private  static PreferencesHelper INSTANCE;
     private SharedPreferences sharedPreferences;
 
-    private PreferencesHelper(Context context) {
+
+    private PreferencesHelper(Context context){
         sharedPreferences = context
                 .getApplicationContext()
-                .getSharedPreferences("simple.android.app", Context.MODE_PRIVATE);
+                .getSharedPreferences("simple.android.app",Context.MODE_PRIVATE);
     }
     public static PreferencesHelper getInstance(Context context){
         if (INSTANCE == null){
-            INSTANCE = PreferencesHelper (Context);
+            INSTANCE = new PreferencesHelper(context);
         }
         return INSTANCE;
     }
-    public SharedPreferences Pref() {
+    public  SharedPreferences Pref(){
         return sharedPreferences;
     }
     public Boolean isLogin(){
-        return sharedPreferences.getBoolean("isLogin", false);
+        return sharedPreferences.getBoolean("isLogin",false);
     }
-    public void setLogin(boolean isCall){
-        sharedPreferences.edit() .putBoolean("isLogin", isCall).apply();
+    public void  setLogin(boolean isCall){
+        sharedPreferences.edit().putBoolean("isLogin",isCall).apply();
     }
     public void setName (String isName){
-        sharedPreferences.edit().putString("isName", isName).apply();
-    }
-    public String getName(){
-        return sharedPreferences.getString("isName" "");
-    }
+        sharedPreferences.edit().putString("isName",isName).apply();
 
+    }
+    private String getName(){
+        return sharedPreferences.getString("isName","");
+    }
 }
